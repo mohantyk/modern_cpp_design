@@ -37,8 +37,9 @@ int main(int argc, const char * argv[]) {
     test_for_cpp_14();
     
     std::cout << "Hello, World! Welcome "<<argv[1]<<".\n";
-    auto student0 = get_student(0);
-    cout    << "ID: 0, "
+    auto id = 0;
+    auto student0 = get_student(id);
+    cout    << "ID:  " << id << ", "
             << "GPA : " << get<0>(student0)<<", "
             << "grade: " << get<1>(student0)<<", "
             << "name: " << get<2>(student0)<< endl;
