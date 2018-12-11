@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0F212CBB1DCC2CD300F56539 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F212CBA1DCC2CD300F56539 /* main.cpp */; };
+		0F60AF6C21C01A2A001F56BF /* Creator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F60AF6B21C01A2A001F56BF /* Creator.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,7 +26,9 @@
 /* Begin PBXFileReference section */
 		0F212CB71DCC2CD300F56539 /* CplusTutorial */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CplusTutorial; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F212CBA1DCC2CD300F56539 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		0F60AF6921BFD2E9001F56BF /* Creator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Creator.h; path = CplusTutorial/Creator.h; sourceTree = "<group>"; };
+		0F60AF6921BFD2E9001F56BF /* Creator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Creator.h; sourceTree = "<group>"; };
+		0F60AF6A21C01920001F56BF /* Techniques.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Techniques.h; sourceTree = "<group>"; };
+		0F60AF6B21C01A2A001F56BF /* Creator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Creator.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +45,6 @@
 		0F212CAE1DCC2CD200F56539 = {
 			isa = PBXGroup;
 			children = (
-				0F60AF6921BFD2E9001F56BF /* Creator.h */,
 				0F212CB91DCC2CD300F56539 /* CplusTutorial */,
 				0F212CB81DCC2CD300F56539 /* Products */,
 			);
@@ -60,6 +62,9 @@
 			isa = PBXGroup;
 			children = (
 				0F212CBA1DCC2CD300F56539 /* main.cpp */,
+				0F60AF6B21C01A2A001F56BF /* Creator.cpp */,
+				0F60AF6A21C01920001F56BF /* Techniques.h */,
+				0F60AF6921BFD2E9001F56BF /* Creator.h */,
 			);
 			path = CplusTutorial;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F60AF6C21C01A2A001F56BF /* Creator.cpp in Sources */,
 				0F212CBB1DCC2CD300F56539 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

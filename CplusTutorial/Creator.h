@@ -50,6 +50,9 @@ private:
     T* pPrototype_;
 };
 
+// Examples
+void creator_example(void);
+
 /*
  // Example of a class using such a Creator Policy
  template <class CreationPolicy>

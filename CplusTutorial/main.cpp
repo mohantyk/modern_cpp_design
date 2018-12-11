@@ -12,18 +12,12 @@
 
 #include "Creator.h"
 
-#define MAGIC_CONSTANT 42
 
 using namespace std;
 
 
 int main(int argc, const char * argv[]) {
-    OpNewCreator<int> tempStruct;
-    std::unique_ptr<int> temp_ptr(tempStruct.Create());
-    
-    *temp_ptr = MAGIC_CONSTANT;
-    
-    cout << *temp_ptr << endl;
+    creator_example();
     
     return 0;
 }
