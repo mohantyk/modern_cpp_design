@@ -11,6 +11,7 @@
 #include <memory>
 
 #include "Creator.h"
+#include "Techniques.h"
 
 
 using namespace std;
@@ -18,6 +19,7 @@ using namespace std;
 
 int main(int argc, const char * argv[]) {
     creator_example();
+
     
     return 0;
 }
