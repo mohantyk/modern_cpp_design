@@ -50,5 +50,26 @@ private:
     T* pPrototype_;
 };
 
+/*
+ // Example of a class using such a Creator Policy
+ template <class CreationPolicy>
+ class WidgetManager: public CreationPolicy
+ { ... };
+ 
+ //Application Code
+ typedef WidgetManager< MallocCreator<Widget> > MyWidgetMgr;
+ 
+*/
+
+/*
+ // Another example
+ template <template <class Created> class CreationPolicy>
+ class WidgetManager: public CreationPolicy<Widget>
+ {...};
+ 
+ //Applicatin Code
+ typedef WidgetManager < MallocCreator > MyWidgetMgr;
+*/
+
 
 #endif /* Creator_h */
