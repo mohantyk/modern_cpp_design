@@ -10,6 +10,7 @@
 		0F212CBB1DCC2CD300F56539 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F212CBA1DCC2CD300F56539 /* main.cpp */; };
 		0F60AF6C21C01A2A001F56BF /* Creator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F60AF6B21C01A2A001F56BF /* Creator.cpp */; };
 		0F60AF6E21C01B4D001F56BF /* Techniques.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F60AF6D21C01B4D001F56BF /* Techniques.cpp */; };
+		0F6BEF7221C15BF100074763 /* Typelists.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0F6BEF7021C15BF100074763 /* Typelists.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		0F60AF6A21C01920001F56BF /* Techniques.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Techniques.h; sourceTree = "<group>"; };
 		0F60AF6B21C01A2A001F56BF /* Creator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Creator.cpp; sourceTree = "<group>"; };
 		0F60AF6D21C01B4D001F56BF /* Techniques.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Techniques.cpp; sourceTree = "<group>"; };
+		0F6BEF7021C15BF100074763 /* Typelists.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Typelists.cpp; sourceTree = "<group>"; };
+		0F6BEF7121C15BF100074763 /* Typelists.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Typelists.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,11 +66,13 @@
 		0F212CB91DCC2CD300F56539 /* CplusTutorial */ = {
 			isa = PBXGroup;
 			children = (
-				0F212CBA1DCC2CD300F56539 /* main.cpp */,
 				0F60AF6B21C01A2A001F56BF /* Creator.cpp */,
-				0F60AF6A21C01920001F56BF /* Techniques.h */,
-				0F60AF6D21C01B4D001F56BF /* Techniques.cpp */,
 				0F60AF6921BFD2E9001F56BF /* Creator.h */,
+				0F212CBA1DCC2CD300F56539 /* main.cpp */,
+				0F60AF6D21C01B4D001F56BF /* Techniques.cpp */,
+				0F60AF6A21C01920001F56BF /* Techniques.h */,
+				0F6BEF7021C15BF100074763 /* Typelists.cpp */,
+				0F6BEF7121C15BF100074763 /* Typelists.hpp */,
 			);
 			path = CplusTutorial;
 			sourceTree = "<group>";
@@ -131,6 +136,7 @@
 				0F60AF6C21C01A2A001F56BF /* Creator.cpp in Sources */,
 				0F60AF6E21C01B4D001F56BF /* Techniques.cpp in Sources */,
 				0F212CBB1DCC2CD300F56539 /* main.cpp in Sources */,
+				0F6BEF7221C15BF100074763 /* Typelists.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,7 @@
 
 #include "Creator.h"
 #include "Techniques.h"
+#include "Typelists.hpp"
 
 
 using namespace std;
@@ -19,6 +20,7 @@ using namespace std;
 
 int main(int argc, const char * argv[]) {
     creator_example();
+    typelist_checks();
 
     
     return 0;

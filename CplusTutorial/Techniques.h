@@ -41,4 +41,12 @@ Interface* MakeAdapter(const T& obj, const P& arg)
     return new Local(obj, arg);
 }
 
+//Typify an integer
+template <int v>
+struct Int2type
+{
+    enum {value = v};
+};
+
+
 #endif /* Techniques_h */
