@@ -18,5 +18,6 @@ void creator_example(void)
     OpNewCreator<int> tempStruct;
     std::unique_ptr<int> temp_ptr(tempStruct.Create());
     *temp_ptr = MAGIC_CONSTANT;
-    std::cout << *temp_ptr << std::endl;
+    std::cout << "Creator example of an int ptr (should be 42): " << *temp_ptr << std::endl;
+    std::cout << std::endl;
 }
