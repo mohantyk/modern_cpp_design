@@ -45,7 +45,7 @@ void check_typelist_search(void)
 
 void check_typelist_append(void)
 {
-    std::vector<char> myVector(Length< typename Append<SignedIntegrals, AllCharTypes>::Result >::value);
+    std::vector<char> myVector(Length< Append<SignedIntegrals, AllCharTypes>::Result >::value);
     cout << "Length of appended typelist (should be 7): " << myVector.size() << endl;
     cout << endl;
 }
