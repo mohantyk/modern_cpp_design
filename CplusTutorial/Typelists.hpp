@@ -88,6 +88,46 @@ public:
 
 void check_typelist_search(void);
 
+// Append to a Typelist
+template <typename TList, typename T> struct Append;
+
+template <>
+struct Append<NullType, NullType>
+{
+    typedef NullType Result;
+};
+
+template <typename T>
+struct Append<NullType, T>
+{
+    typedef Typelist<T, NullType> Result;
+};
+
+template <typename Head, typename Tail>
+struct Append<NullType, Typelist<Head, Tail> >
+{
+    typedef Typelist<Head, Tail> Result;
+};
+
+template <typename Head, typename Tail, typename T>
+struct Append<Typelist<Head, Tail>, T>
+{
+    typedef Typelist<Head,
+                    typename Append<Tail, T>::Result>
+            Result;
+};
+
+void check_typelist_append(void);
+
 // Wrappers
 void typelist_checks(void); // For testing all typelist functionality
 #endif /* Typelists_hpp */
+
+
+
+
+
+
+
+
+
