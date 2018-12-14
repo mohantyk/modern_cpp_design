@@ -10,6 +10,8 @@
 #define Typelists_hpp
 
 #include <stdio.h>
+#include <iostream>
+#include <typeinfo>
 
 template <typename T, typename U>
 struct Typelist
@@ -27,20 +29,65 @@ class NullType {};
 
 // Length of a Typelist
 template <typename TList> struct Length;
+
 template <> struct Length<NullType>
 {
     enum {value = 0};
 };
+
 template <typename T, typename U>
 struct Length<Typelist<T, U> >
 {
     enum { value = 1 + Length<U>::value };
 };
+
 void check_typelist_length(void); // For testing
 
 //Indexed access to a Typelist
-//template <typename TList, unsigned int i>
+template <typename TList, unsigned int i> struct TypeAt;
+
+template <typename Head, typename Tail>
+struct TypeAt<Typelist<Head, Tail>, 0>
+{
+    typedef Head Result;
+};
+
+template <typename Head, typename Tail, unsigned int i>
+struct TypeAt<Typelist<Head, Tail>, i>
+{
+    typedef typename TypeAt<Tail, i-1>::Result Result;
+};
+
+void check_typelist_indexing(void); // For testing
 
 
-void typelist_checks(void);
+// Search a Typelist
+template <typename TList, typename T> struct IndexOf;
+
+template <typename T>
+struct IndexOf<NullType, T>
+{
+    enum { value = -1 };
+};
+
+template <typename Tail, typename T>
+struct IndexOf<Typelist<T, Tail>, T>
+{
+    enum { value = 0 };
+};
+
+template <typename Head, typename Tail, typename T>
+struct IndexOf<Typelist<Head, Tail>, T>
+{
+private:
+    enum { temp = IndexOf<Tail, T>::value } ;
+public:
+    enum { value = temp == -1 ? -1 : 1 + temp} ;
+    
+};
+
+void check_typelist_search(void);
+
+// Wrappers
+void typelist_checks(void); // For testing all typelist functionality
 #endif /* Typelists_hpp */
