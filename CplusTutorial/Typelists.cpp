@@ -50,6 +50,16 @@ void check_typelist_append(void)
     cout << endl;
 }
 
+void check_typelist_erase(void)
+{
+    typedef Erase<SignedIntegrals, short int>::Result ErasedTypelist;
+    int IndexOfLongIntBeforeErase(IndexOf<SignedIntegrals, long int>::value);
+    int IndexOfLongIntAfterErase(IndexOf<ErasedTypelist, long int>::value);
+    cout << "Index of type long int in original typelist (should be 3): " << IndexOfLongIntBeforeErase << endl;
+    cout << "Index of type long int in erased typelist (should be 2): " << IndexOfLongIntAfterErase << endl;
+    cout << endl;
+}
+
 void typelist_checks(void)
 {
     cout << "TYPELIST CHECKS" << endl;
@@ -57,6 +67,7 @@ void typelist_checks(void)
     check_typelist_indexing();
     check_typelist_search();
     check_typelist_append();
+    check_typelist_erase();
     cout << endl;
 }
 
