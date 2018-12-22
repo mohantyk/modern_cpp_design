@@ -82,6 +82,16 @@ void check_typelist_noduplicates(void)
     cout << endl;
 }
 
+void check_typelist_replace(void)
+{
+    int IndexOfCharInOriginal(IndexOf<SignedIntegrals, char>::value);
+    cout << "Index of type char in original typelist (should be -1): " << IndexOfCharInOriginal << endl;
+    typedef Replace<SignedIntegrals, long int, char>::Result ReplacedIntegrals;
+    int IndexOfChar(IndexOf<ReplacedIntegrals, char>::value);
+    cout << "Index of type char in replaced typelist (should be 3): " << IndexOfChar << endl;
+    cout << endl;
+}
+
 void typelist_checks(void)
 {
     cout << "TYPELIST CHECKS" << endl;
@@ -92,6 +102,7 @@ void typelist_checks(void)
     check_typelist_erase();
     check_typelist_eraseall();
     check_typelist_noduplicates();
+    check_typelist_replace();
     cout << endl;
 }
 

@@ -190,6 +190,32 @@ struct NoDuplicates<Typelist<Head, Tail> >
 void check_typelist_noduplicates(void);
 
 
+// Replacing an element
+template <typename TList, typename Original, typename Replacement> struct Replace;
+
+template<typename Original, typename Replacement>
+struct Replace<NullType, Original, Replacement>
+{
+    typedef NullType Result;
+};
+
+template <typename Tail, typename Original, typename Replacement>
+struct Replace<Typelist<Original, Tail>, Original, Replacement>
+{
+    typedef Typelist<Replacement, Tail> Result;
+};
+
+template <typename Head, typename Tail, typename Original, typename Replacement>
+struct Replace<Typelist<Head, Tail>, Original, Replacement>
+{
+    typedef Typelist<Head,
+                        typename Replace<Tail, Original, Replacement>::Result >
+                Result;
+};
+void check_typelist_replace(void);
+
+
+
 // Wrappers
 void typelist_checks(void); // For testing all typelist functionality
 #endif /* Typelists_hpp */
