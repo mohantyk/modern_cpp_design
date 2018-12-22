@@ -71,6 +71,16 @@ void check_typelist_eraseall(void)
     cout << endl;
 }
 
+void check_typelist_noduplicates(void)
+{
+    typedef TYPELIST_6(signed char, short int, int, signed char, short int, long int) SignedIntegralsRepeated;
+    typedef NoDuplicates<SignedIntegralsRepeated>::Result EraseDuplicatesTypelist;
+    int IndexOfLongIntBeforeErase(IndexOf<SignedIntegralsRepeated, long int>::value);
+    int IndexOfLongIntAfterErase(IndexOf<EraseDuplicatesTypelist, long int>::value);
+    cout << "Index of type long int in original typelist (should be 5): " << IndexOfLongIntBeforeErase << endl;
+    cout << "Index of type long int in no-duplicate typelist (should be 3): " << IndexOfLongIntAfterErase << endl;
+    cout << endl;
+}
 
 void typelist_checks(void)
 {
@@ -81,6 +91,7 @@ void typelist_checks(void)
     check_typelist_append();
     check_typelist_erase();
     check_typelist_eraseall();
+    check_typelist_noduplicates();
     cout << endl;
 }
 
