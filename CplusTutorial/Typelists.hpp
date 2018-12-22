@@ -22,10 +22,11 @@ struct Typelist
 
 class NullType {};
 
-#define TYPELIST_1(T1)              Typelist<T1, NullType>
-#define TYPELIST_2(T1, T2)          Typelist<T1, TYPELIST_1(T2) >
-#define TYPELIST_3(T1, T2, T3)      Typelist<T1, TYPELIST_2(T2, T3) >
-#define TYPELIST_4(T1, T2, T3, T4)  Typelist<T1, TYPELIST_3(T2, T3, T4) >
+#define TYPELIST_1(T1)                  Typelist<T1, NullType>
+#define TYPELIST_2(T1, T2)              Typelist<T1, TYPELIST_1(T2) >
+#define TYPELIST_3(T1, T2, T3)          Typelist<T1, TYPELIST_2(T2, T3) >
+#define TYPELIST_4(T1, T2, T3, T4)      Typelist<T1, TYPELIST_3(T2, T3, T4) >
+#define TYPELIST_5(T1, T2, T3, T4, T5)  Typelist<T1, TYPELIST_4(T2, T3, T4, T5) >
 
 // Length of a Typelist
 template <typename TList> struct Length;
@@ -119,7 +120,7 @@ struct Append<Typelist<Head, Tail>, T>
 
 void check_typelist_append(void);
 
-// Erase Type from a Typelist
+// Erase Type from a Typelist (only first occurence removed)
 template <typename TList, typename T> struct Erase;
 
 template <typename T>
@@ -143,6 +144,30 @@ struct Erase<Typelist<Head, Tail>, T>
 };
 
 void check_typelist_erase(void);
+
+// Erase all occurences of Type from Typelist
+template <typename TList, typename T> struct EraseAll;
+
+template <typename T>
+struct EraseAll<NullType, T>
+{
+    typedef NullType Result;
+};
+
+template <typename Head, typename Tail>
+struct EraseAll<Typelist<Head, Tail>, Head>
+{
+    typedef EraseAll<Tail, Head> Result;
+};
+
+template <typename Head, typename Tail, typename T>
+struct EraseAll<Typelist<Head, Tail>, T>
+{
+    typedef EraseAll<Head,
+                    typename EraseAll<Tail, T>::Result >
+                Result;
+};
+void check_typelist_eraseall(void);
 
 
 // Wrappers
